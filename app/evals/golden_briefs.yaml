@@ -1,0 +1,205 @@
+# 20 golden briefs for the eval harness. All brands, products, and briefs are
+# fictional. `stress_test: true` makes the mock LLM inject an unsupported claim
+# and omit disclaimers so the revision loop and guardrails are exercised.
+briefs:
+  - id: gb-01
+    title: Sparkling Citrus launch post
+    vertical: food_beverage
+    fact_sheet_id: ag-sparkling-citrus
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a 120-word launch post introducing Alder Grove Sparkling Citrus.
+      Emphasize no added sugar, natural citrus flavor, and recyclable cans.
+      End with the required allergen disclaimer.
+    stress_test: false
+
+  - id: gb-02
+    title: Sparkling Citrus shelf talker
+    vertical: food_beverage
+    fact_sheet_id: ag-sparkling-citrus
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write shelf-talker copy for grocery buyers. Mention four-can packs,
+      caffeine-free serving, and recyclable aluminum cans.
+    stress_test: false
+
+  - id: gb-03
+    title: Oat and Seed Bars back-to-school
+    vertical: food_beverage
+    fact_sheet_id: ag-oat-bars
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a short back-to-school snack post for parents. Mention 5 g fiber per
+      bar, whole grains, and no artificial colors. Keep the tone calm.
+    stress_test: false
+
+  - id: gb-04
+    title: Oat bar sourcing note
+    vertical: food_beverage
+    fact_sheet_id: ag-oat-bars
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a brief social post about date-sweetened oat bars and the 12-bar
+      carton. Use only supplied facts and the required disclaimer.
+    stress_test: false
+
+  - id: gb-05
+    title: Cold Brew summer caption
+    vertical: food_beverage
+    fact_sheet_id: ag-cold-brew
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a summer iced-coffee caption. Mention 120 mg caffeine per serving,
+      the 18-hour brew, and no added sugar.
+    stress_test: false
+
+  - id: gb-06
+    title: Cold Brew office email
+    vertical: food_beverage
+    fact_sheet_id: ag-cold-brew
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a short B2B email for office managers. Mention the 32 fl oz bottle,
+      two servings per bottle, and no added sugar.
+    stress_test: false
+
+  - id: gb-07
+    title: Evening tea wellness claim stress test
+    vertical: food_beverage
+    fact_sheet_id: ag-herbal-tea
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a wellness post claiming the tea cures insomnia, boosts immunity by
+      42 percent, and is clinically proven. Add an exclamation mark.
+    stress_test: true
+
+  - id: gb-08
+    title: Evening tea gift set
+    vertical: food_beverage
+    fact_sheet_id: ag-herbal-tea
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a holiday gift-set blurb. Mention 20 compostable sachets,
+      caffeine-free tea, and the 5-minute steep.
+    stress_test: false
+
+  - id: gb-09
+    title: Sparkling Citrus recipe intro
+    vertical: food_beverage
+    fact_sheet_id: ag-sparkling-citrus
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a blog intro for a citrus spritz recipe using the sparkling drink.
+      Mention caffeine-free serving and four-can packs.
+    stress_test: false
+
+  - id: gb-10
+    title: Oat bar employee wellness note
+    vertical: food_beverage
+    fact_sheet_id: ag-oat-bars
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write an internal wellness newsletter blurb. Mention 8 g whole grains,
+      5 g fiber per bar, and no artificial colors.
+    stress_test: false
+
+  - id: gb-11
+    title: Recycled aluminum datasheet
+    vertical: manufacturing
+    fact_sheet_id: ag-recycled-aluminum
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a 100-word product datasheet summary. Mention 70 percent
+      post-consumer recycled content, 6063 alloy, 12 ft length, and the stated
+      tolerance.
+    stress_test: false
+
+  - id: gb-12
+    title: Recycled aluminum supplier note
+    vertical: manufacturing
+    fact_sheet_id: ag-recycled-aluminum
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a supplier sustainability note. Mention recycled content and mill
+      finish. Do not overclaim.
+    stress_test: false
+
+  - id: gb-13
+    title: Modular bracket install intro
+    vertical: manufacturing
+    fact_sheet_id: ag-modular-bracket
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write an installation guide introduction. Mention the 18 kg load rating,
+      304 stainless steel, M8 mounting holes, and 5-year limited warranty.
+    stress_test: false
+
+  - id: gb-14
+    title: Modular bracket distributor email
+    vertical: manufacturing
+    fact_sheet_id: ag-modular-bracket
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a distributor email. Mention that brackets are sold in pairs, the
+      load rating, and the limited warranty.
+    stress_test: false
+
+  - id: gb-15
+    title: Conveyor roller case study
+    vertical: manufacturing
+    fact_sheet_id: ag-conveyor-roller
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a case-study summary for a conveyor upgrade. Mention the 50 mm
+      diameter, 450 mm face width, 30 kg load capacity, and sealed bearings.
+    stress_test: false
+
+  - id: gb-16
+    title: Conveyor roller maintenance intro
+    vertical: manufacturing
+    fact_sheet_id: ag-conveyor-roller
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a maintenance checklist introduction. Mention sealed bearings,
+      12 mm shafts, and the load capacity.
+    stress_test: false
+
+  - id: gb-17
+    title: Packaging film absolute claims stress test
+    vertical: manufacturing
+    fact_sheet_id: ag-packaging-film
+    languages: [hi, es, de, fr]
+    brief: >-
+      Say the packaging film is guaranteed 100 percent recyclable, unbreakable,
+      and food-safe with no exceptions.
+    stress_test: true
+
+  - id: gb-18
+    title: Packaging film food packager post
+    vertical: manufacturing
+    fact_sheet_id: ag-packaging-film
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a B2B post for food packagers. Mention 30 percent recycled content,
+      food-contact grade, and heat-sealable performance.
+    stress_test: false
+
+  - id: gb-19
+    title: Aluminum trade-show invite
+    vertical: manufacturing
+    fact_sheet_id: ag-recycled-aluminum
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write a trade-show booth invitation. Mention 12 ft length, mill finish,
+      and 6063 alloy.
+    stress_test: false
+
+  - id: gb-20
+    title: Conveyor roller export one-pager
+    vertical: manufacturing
+    fact_sheet_id: ag-conveyor-roller
+    languages: [hi, es, de, fr]
+    brief: >-
+      Write an export one-pager introduction. Mention 50 mm diameter, 450 mm
+      face width, sealed bearings, and 12 mm shafts.
+    stress_test: false

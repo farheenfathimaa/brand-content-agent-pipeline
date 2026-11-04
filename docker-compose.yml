@@ -1,0 +1,50 @@
+name: brand-content-agent-pipeline
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: brand-content-agent-pipeline:local
+    init: true
+    ports:
+      - "8000:8000"
+    environment:
+      APP_MODE: ${APP_MODE:-mock}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DATABASE_PATH: /app/data/pipeline.db
+      DESIGN_OUTPUT_DIR: /app/outputs/designs
+      GENERATE_DESIGN_ASSETS: ${GENERATE_DESIGN_ASSETS:-true}
+      MAX_REVISION_LOOPS: ${MAX_REVISION_LOOPS:-2}
+      TRANSLATION_SIMILARITY_THRESHOLD: ${TRANSLATION_SIMILARITY_THRESHOLD:-0.72}
+
+      WEBHOOK_URL: ${WEBHOOK_URL:-}
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-}
+      WEBHOOK_MAX_ATTEMPTS: ${WEBHOOK_MAX_ATTEMPTS:-3}
+
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      LLM_PRIMARY_MODEL: ${LLM_PRIMARY_MODEL:-groq/llama-3.3-70b-versatile}
+      LLM_FALLBACK_MODEL: ${LLM_FALLBACK_MODEL:-gemini/gemini-2.0-flash}
+      LLM_ANTHROPIC_MODEL: ${LLM_ANTHROPIC_MODEL:-}
+
+      TASK_TRACKER: ${TASK_TRACKER:-mock}
+      CLICKUP_API_TOKEN: ${CLICKUP_API_TOKEN:-}
+      CLICKUP_LIST_ID: ${CLICKUP_LIST_ID:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      GITHUB_REPO: ${GITHUB_REPO:-}
+
+      DESIGN_PROVIDER: ${DESIGN_PROVIDER:-local}
+      CANVA_ACCESS_TOKEN: ${CANVA_ACCESS_TOKEN:-}
+      CANVA_BRAND_TEMPLATE_ID: ${CANVA_BRAND_TEMPLATE_ID:-}
+    volumes:
+      - pipeline-data:/app/data
+      - pipeline-outputs:/app/outputs
+      - pipeline-reports:/app/reports
+    restart: unless-stopped
+
+volumes:
+  pipeline-data:
+  pipeline-outputs:
+  pipeline-reports:

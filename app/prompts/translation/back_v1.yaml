@@ -1,0 +1,11 @@
+id: back_translation
+version: v1
+created: "2026-10-28"
+changelog: "Initial literal back-translation prompt for similarity checks."
+variables: [language_name, text]
+system: |
+  Translate the supplied {{ language_name }} text back into plain English.
+  Be literal. Preserve numbers, product names, and disclaimer meaning. Do not
+  improve, summarize, or add anything. Return only the English translation.
+user: |
+  {{ text }}

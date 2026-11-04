@@ -1,0 +1,136 @@
+# Fictional fact sheets for Alder Grove, a made-up brand.
+# Every product, number, and claim in this file is invented for demonstration.
+# Do not treat any value as a real product specification.
+fact_sheets:
+  - id: ag-sparkling-citrus
+    brand: Alder Grove
+    vertical: food_beverage
+    product_name: Alder Grove Sparkling Citrus
+    category: Sparkling botanical drink
+    facts:
+      - "0 g added sugar per 12 fl oz can"
+      - "Naturally flavored with cold-pressed citrus peel"
+      - "Sold in 4-can packs"
+      - "Cans are made from recyclable aluminum"
+      - "Caffeine-free"
+    approved_claims:
+      - "No added sugar"
+      - "Naturally flavored"
+      - "Caffeine-free"
+      - "Packaged in recyclable aluminum"
+    notes: Fictional demonstration data. Not a real product.
+
+  - id: ag-oat-bars
+    brand: Alder Grove
+    vertical: food_beverage
+    product_name: Alder Grove Oat & Seed Bars
+    category: Snack bar
+    facts:
+      - "8 g whole grains per bar"
+      - "5 g fiber per bar"
+      - "Sold in 12-bar cartons"
+      - "Sweetened with dates"
+      - "No artificial colors"
+    approved_claims:
+      - "No artificial colors"
+      - "5 g fiber per bar"
+      - "Made with whole grains"
+    notes: Fictional demonstration data. Not a real product.
+
+  - id: ag-cold-brew
+    brand: Alder Grove
+    vertical: food_beverage
+    product_name: Alder Grove Cold Brew
+    category: Ready-to-drink coffee
+    facts:
+      - "120 mg caffeine per 12 fl oz serving"
+      - "32 fl oz bottle"
+      - "Two servings per bottle"
+      - "No added sugar"
+      - "Brewed for 18 hours"
+    approved_claims:
+      - "No added sugar"
+      - "Brewed for 18 hours"
+    notes: Fictional demonstration data. Not a real product.
+
+  - id: ag-herbal-tea
+    brand: Alder Grove
+    vertical: food_beverage
+    product_name: Alder Grove Evening Herbal Tea
+    category: Herbal tea
+    facts:
+      - "20 compostable sachets per box"
+      - "Caffeine-free"
+      - "Blend of chamomile, lemon balm, and mint"
+      - "Steep for 5 minutes"
+      - "Sachets are compostable"
+    approved_claims:
+      - "Caffeine-free"
+      - "Compostable sachets"
+    notes: Fictional demonstration data. Not a real product.
+
+  - id: ag-recycled-aluminum
+    brand: Alder Grove
+    vertical: manufacturing
+    product_name: Alder Grove Recycled Aluminum Extrusion
+    category: Aluminum profile
+    facts:
+      - "70% post-consumer recycled content"
+      - "6063 alloy"
+      - "12 ft length"
+      - "Tolerance of plus or minus 0.5 mm"
+      - "Mill finish"
+    approved_claims:
+      - "70% post-consumer recycled content"
+      - "Made from 6063 alloy"
+    notes: Fictional demonstration data. Not a real product specification.
+
+  - id: ag-modular-bracket
+    brand: Alder Grove
+    vertical: manufacturing
+    product_name: Alder Grove Modular Bracket M8
+    category: Mounting bracket
+    facts:
+      - "18 kg load rating"
+      - "304 stainless steel"
+      - "M8 mounting holes"
+      - "5-year limited warranty"
+      - "Sold in pairs"
+    approved_claims:
+      - "18 kg load rating"
+      - "304 stainless steel"
+      - "5-year limited warranty"
+    notes: Fictional demonstration data. Not a real product specification.
+
+  - id: ag-conveyor-roller
+    brand: Alder Grove
+    vertical: manufacturing
+    product_name: Alder Grove Conveyor Roller 50
+    category: Conveyor component
+    facts:
+      - "50 mm diameter"
+      - "450 mm face width"
+      - "30 kg load capacity"
+      - "Sealed bearings"
+      - "Fits 12 mm shafts"
+    approved_claims:
+      - "30 kg load capacity"
+      - "Sealed bearings"
+    notes: Fictional demonstration data. Not a real product specification.
+
+  - id: ag-packaging-film
+    brand: Alder Grove
+    vertical: manufacturing
+    product_name: Alder Grove Recyclable Packaging Film
+    category: Packaging film
+    facts:
+      - "30% recycled content"
+      - "1.2 m roll width"
+      - "40 micron thickness"
+      - "Food-contact grade"
+      - "Heat-sealable"
+    approved_claims:
+      - "30% recycled content"
+      - "Food-contact grade"
+      - "Heat-sealable"
+    notes: Fictional demonstration data. Not a real product specification.

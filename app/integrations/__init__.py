@@ -1,0 +1,1 @@
+"""Mock + real integration adapters."""

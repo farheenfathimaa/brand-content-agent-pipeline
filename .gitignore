@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Application runtime data
+data/*.db
+data/*.db-*
+data/*.sqlite
+data/*.sqlite-*
+outputs/designs/*
+!outputs/designs/.gitkeep
+# Generated eval artifacts are committed on purpose for reproducibility, but a
+# local run can overwrite them. Keep reports/ tracked.
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Playwright
+playwright-report/
+test-results/

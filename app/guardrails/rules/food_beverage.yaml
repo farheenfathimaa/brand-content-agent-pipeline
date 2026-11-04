@@ -1,0 +1,115 @@
+# Guardrail rule pack: fictional brand Alder Grove, food & beverage vertical.
+# All brand names, products, and claims are invented for demonstration.
+pack_id: food_beverage
+version: "1.0.0"
+vertical: food_beverage
+brand:
+  name: Alder Grove
+  voice_summary: >-
+    Plain-spoken, specific, and calm. Lead with concrete product facts. Avoid
+    hype, health promises, and absolute language. No exclamation marks.
+
+banned_claims:
+  - id: fb-health-cure
+    pattern: '(?i)\b(cures?|cured|treats?|treated|prevents?|prevented|heals?|healed)\b'
+    message: Do not claim that a food or drink cures, treats, prevents, or heals disease.
+    severity: error
+  - id: fb-immunity-boost
+    pattern: '(?i)\b(boost|boosts|boosting|strengthen|strengthens|support|supports)\s+(your\s+)?(immune\s+system|immunity)\b'
+    message: Do not make immune-system claims for a food or beverage.
+    severity: error
+  - id: fb-detox
+    pattern: '(?i)\bdetox\w*\b'
+    message: Do not use detox claims.
+    severity: error
+  - id: fb-weight-loss
+    pattern: '(?i)\b(lose|loses|losing)\s+weight\b|\bweight\s+loss\b|\bburn(s|ing)?\s+fat\b'
+    message: Do not make weight-loss or fat-burning claims.
+    severity: error
+  - id: fb-clinically-proven
+    pattern: '(?i)\bclinically\s+(proven|tested)\b'
+    message: Clinical-proof language is prohibited unless a substantiated study is supplied and approved.
+    severity: error
+  - id: fb-doctor-recommended
+    pattern: '(?i)\bdoctor[- ]recommended\b'
+    message: Do not claim professional endorsement.
+    severity: error
+  - id: fb-fda-approved
+    pattern: '(?i)\b(FDA|USDA)[- ]approved\b'
+    message: Do not claim regulator approval.
+    severity: error
+  - id: fb-guarantee
+    pattern: '(?i)\bguarantee(d|s)?\b'
+    message: Do not guarantee outcomes for a food or beverage.
+    severity: error
+  - id: fb-superfood
+    pattern: '(?i)\bsuperfoods?\b'
+    message: Avoid unscientific superfood framing.
+    severity: error
+  - id: fb-cleanse
+    pattern: '(?i)\bcleanses?\b'
+    message: Do not use cleanse framing.
+    severity: error
+
+required_disclaimers:
+  - id: fb-allergen
+    text: "Allergen information: review the package label before consumption."
+    when: always
+    severity: error
+    message: The allergen disclaimer must appear verbatim.
+
+brand_voice:
+  max_sentence_words: 26
+  max_paragraph_words: 90
+  banned_words:
+    - revolutionary
+    - best-in-class
+    - world-class
+    - game-changing
+    - disruptive
+    - unprecedented
+    - miracle
+    - magical
+    - cutting-edge
+    - state-of-the-art
+    - synergy
+    - unparalleled
+    - ultimate
+    - very
+    - really
+    - extremely
+  banned_patterns:
+    - id: bv-exclamation
+      pattern: '!'
+      message: Exclamation marks are off-brand.
+      severity: error
+  no_all_caps: true
+  allowed_acronyms: [SDS, ISO, ASTM, M8, LED, USB, FAQ]
+  rubric:
+    - id: clarity
+      description: Clear, plain-spoken, one idea per sentence.
+    - id: specificity
+      description: Concrete details that come from the supplied fact sheet.
+    - id: tone
+      description: Calm and confident, never hyped.
+    - id: restraint
+      description: No superlatives, absolutes, or unsupported claims.
+
+groundedness:
+  severity: error
+  check_numbers: true
+  check_products: true
+  check_claims: true
+  claim_patterns:
+    - '(?i)\bclinically\s+(proven|tested)\b'
+    - '(?i)\bdoctor[- ]recommended\b'
+    - '(?i)\b(FDA|USDA)[- ]approved\b'
+    - '(?i)\b100%\s+(natural|organic|recyclable|recycled)\b'
+    - '(?i)\bsuperfoods?\b'
+    - '(?i)\baward[- ]winning\b'
+    - '(?i)(\bnumber\s+one\b|#1\b)'
+    - '(?i)\bpatented\b'
+    - '(?i)\bcarbon[- ]neutral\b'
+    - '(?i)\b(zero|0)\s+calories?\b'
+    - '(?i)\bnon[- ]toxic\b'
+    - '(?i)\bsugar[- ]free\b'

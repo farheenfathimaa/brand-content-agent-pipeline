@@ -1,0 +1,104 @@
+# Guardrail rule pack: fictional brand Alder Grove, manufacturing vertical.
+# All brand names, products, and claims are invented for demonstration.
+pack_id: manufacturing
+version: "1.0.0"
+vertical: manufacturing
+brand:
+  name: Alder Grove
+  voice_summary: >-
+    Plain-spoken, specific, and calm. State specifications and limits exactly.
+    Avoid safety absolutes, hype, and unsupported certifications. No exclamation
+    marks.
+
+banned_claims:
+  - id: mf-guarantee
+    pattern: '(?i)\bguarantee(d|s)?\b'
+    message: Do not guarantee performance; state the supplied warranty terms instead.
+    severity: error
+  - id: mf-safe-absolute
+    pattern: '(?i)\b(100%|perfectly|completely)\s+safe\b|\bzero\s+risk\b|\bno\s+risk\b'
+    message: Do not make absolute safety claims.
+    severity: error
+  - id: mf-never-fails
+    pattern: '(?i)\b(never|cannot)\s+fail\w*\b|\bunbreakable\b'
+    message: Do not claim that a component can never fail.
+    severity: error
+  - id: mf-lifetime-warranty
+    pattern: '(?i)\blifetime\s+(warranty|guarantee)\b'
+    message: Only the supplied limited warranty may be referenced.
+    severity: error
+  - id: mf-fda-approved
+    pattern: '(?i)\b(FDA|USDA)[- ]approved\b'
+    message: Do not claim regulator approval.
+    severity: error
+  - id: mf-industry-leading
+    pattern: '(?i)\bindustry[- ]leading\b|\bbest[- ]in[- ]class\b'
+    message: Avoid unsupported superiority claims.
+    severity: error
+  - id: mf-maintenance-free
+    pattern: '(?i)\bmaintenance[- ]free\b'
+    message: Do not claim maintenance-free operation without a supplied fact.
+    severity: error
+
+required_disclaimers:
+  - id: mf-safety
+    text: Safety data sheet available on request. Install only per local codes.
+    when: always
+    severity: error
+    message: The safety disclaimer must appear verbatim.
+
+brand_voice:
+  max_sentence_words: 26
+  max_paragraph_words: 90
+  banned_words:
+    - revolutionary
+    - best-in-class
+    - world-class
+    - game-changing
+    - disruptive
+    - unprecedented
+    - miracle
+    - magical
+    - cutting-edge
+    - state-of-the-art
+    - synergy
+    - unparalleled
+    - ultimate
+    - very
+    - really
+    - extremely
+  banned_patterns:
+    - id: bv-exclamation
+      pattern: '!'
+      message: Exclamation marks are off-brand.
+      severity: error
+  no_all_caps: true
+  allowed_acronyms: [SDS, ISO, ASTM, M8, LED, USB, FAQ]
+  rubric:
+    - id: clarity
+      description: Clear, plain-spoken, one idea per sentence.
+    - id: specificity
+      description: Concrete specifications that come from the supplied fact sheet.
+    - id: tone
+      description: Calm and confident, never hyped.
+    - id: restraint
+      description: No superlatives, absolutes, or unsupported claims.
+
+groundedness:
+  severity: error
+  check_numbers: true
+  check_products: true
+  check_claims: true
+  claim_patterns:
+    - '(?i)\b100%\s+(recyclable|recycled)\b'
+    - '(?i)\bcarbon[- ]neutral\b'
+    - '(?i)\bpatented\b'
+    - '(?i)\baward[- ]winning\b'
+    - '(?i)(\bnumber\s+one\b|#1\b)'
+    - '(?i)\b(FDA|USDA)[- ]approved\b'
+    - '(?i)\bfood[- ]safe\b'
+    - '(?i)\bcorrosion[- ]proof\b'
+    - '(?i)\bweather[- ]proof\b'
+    - '(?i)\bmaintenance[- ]free\b'
+    - '(?i)\bcertified\b'
+    - '(?i)\bunbreakable\b'
