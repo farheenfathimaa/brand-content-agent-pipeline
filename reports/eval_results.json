@@ -3,9 +3,9 @@
   "meta": {
     "brief_count": 20,
     "briefs_file": "/home/farheen/codesss/brand-content-agent-pipeline/app/evals/golden_briefs.yaml",
-    "commit": "9451657",
-    "duration_seconds": 1.334,
-    "generated_at": "2026-11-03T18:25:50+00:00",
+    "commit": "81b2a11",
+    "duration_seconds": 0.76,
+    "generated_at": "2026-11-04T00:36:52+00:00",
     "max_revision_loops": 2,
     "mode": "mock",
     "prompt_versions": {
@@ -15,7 +15,7 @@
       "judge": "v1",
       "translation": "v1"
     },
-    "run_id": "eval-20261103T182550Z",
+    "run_id": "eval-20261104T003652Z",
     "translation_similarity_threshold": 0.72
   },
   "metrics": {
@@ -33,7 +33,7 @@
   "report_path": "reports/eval_report.md",
   "results": [
     {
-      "brief_id": "brf_3091cf488365",
+      "brief_id": "brf_d841038b97f4",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -51,7 +51,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_f731d9a7838e",
+      "brief_id": "brf_148adb3b2c39",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -69,7 +69,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_d69b623cdb26",
+      "brief_id": "brf_3da63ae6c6ca",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -87,7 +87,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_e3981e3e5e86",
+      "brief_id": "brf_c85c6bf31b49",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -105,7 +105,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_b8a301888927",
+      "brief_id": "brf_a236f84da861",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -123,7 +123,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_1b3705084980",
+      "brief_id": "brf_ba34a1900222",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -141,7 +141,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_5895d94cc426",
+      "brief_id": "brf_54d111747316",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -159,7 +159,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_d859e0288300",
+      "brief_id": "brf_8d154a43f373",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -177,7 +177,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_0e6a144e9148",
+      "brief_id": "brf_078a988d5a42",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -195,7 +195,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_16115e814fac",
+      "brief_id": "brf_b33da1a2cb71",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -213,7 +213,7 @@
       "vertical": "food_beverage"
     },
     {
-      "brief_id": "brf_228b1afa5606",
+      "brief_id": "brf_155c87dac9e0",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -231,7 +231,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_2ee9bf2ee7da",
+      "brief_id": "brf_e21cba8f96f3",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -249,7 +249,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_7d550aa072ef",
+      "brief_id": "brf_0b7f43659c9d",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -267,7 +267,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_a67beb03dd3a",
+      "brief_id": "brf_9b133348e8d4",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -285,7 +285,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_4cf9fd1259e4",
+      "brief_id": "brf_d02236658731",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -303,7 +303,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_9e3674a8da30",
+      "brief_id": "brf_e0c91060debb",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -321,7 +321,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_29b8ac72a660",
+      "brief_id": "brf_83b63207c1a9",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -339,7 +339,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_06b3c6ed08cd",
+      "brief_id": "brf_bcbf533db2d8",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -357,7 +357,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_5734b41ddb50",
+      "brief_id": "brf_b675a477a367",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,
@@ -375,7 +375,7 @@
       "vertical": "manufacturing"
     },
     {
-      "brief_id": "brf_64282c9396b1",
+      "brief_id": "brf_28645c5d6819",
       "error": "",
       "final_passed": true,
       "final_unsupported": false,

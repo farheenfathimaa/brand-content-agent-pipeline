@@ -1,10 +1,10 @@
 # Eval report — Brand Content Agent Pipeline
 
-- **Run:** `eval-20261103T182550Z`
-- **Generated:** 2026-11-03T18:25:50+00:00
+- **Run:** `eval-20261104T003652Z`
+- **Generated:** 2026-11-04T00:36:52+00:00
 - **Mode:** `mock`
-- **Commit:** `9451657`
-- **Duration:** 1.33 s
+- **Commit:** `81b2a11`
+- **Duration:** 0.76 s
 - **Golden briefs:** 20
 - **Policy:** max revision loops = 2, back-translation threshold = 0.72
 
