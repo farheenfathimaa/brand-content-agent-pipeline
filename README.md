@@ -96,6 +96,8 @@ make run
 # http://localhost:8000/health
 ```
 
+Leave that terminal running. The API walkthrough below sends requests to this server.
+
 Without `make`:
 
 ```bash
@@ -155,6 +157,118 @@ curl -sS -X POST "http://localhost:8000/api/v1/briefs/$BRIEF_ID/publish" \
 curl -s "http://localhost:8000/api/v1/cms?brief_id=$BRIEF_ID&status=published"
 curl -s "http://localhost:8000/api/v1/cms/cms_replace_me/preview"
 ```
+
+### Verified mock-mode output
+
+Captured from a local mock-mode run. IDs and timestamps differ per run; every other value below is copied from the actual responses.
+
+`GET /health`:
+
+```json
+{
+    "status": "ok",
+    "mode": "mock",
+    "database": "data/pipeline.db",
+    "llm_provider": "mock",
+    "task_tracker": "mock",
+    "design_provider": "local",
+    "webhook_configured": false,
+    "prompt_versions": {
+        "back_translation": "v1",
+        "critic": "v1",
+        "draft": "v2",
+        "judge": "v1",
+        "translation": "v1"
+    },
+    "time": "2026-11-05T03:57:15.116751Z"
+}
+```
+
+Selected fields from the create response (HTTP `201`):
+
+```json
+{
+    "id": "brf_98c7cc625c11",
+    "state": "pending_approval",
+    "headline": "Alder Grove Sparkling Citrus: No added sugar",
+    "guardrail": {
+        "passed": true,
+        "violations": [],
+        "summary": "0 error(s), 0 warning(s) across 4 checks."
+    },
+    "critique": [],
+    "revision_count": 0
+}
+```
+
+Selected fields from the approve response (HTTP `200`):
+
+```json
+{
+    "state": "staged",
+    "translations": [
+        {"language": "hi", "similarity": 1.0, "attempt": 1},
+        {"language": "es", "similarity": 1.0, "attempt": 1},
+        {"language": "de", "similarity": 1.0, "attempt": 1},
+        {"language": "fr", "similarity": 1.0, "attempt": 1}
+    ],
+    "cms_documents": [
+        {"id": "cms_8d96870dc303", "language": "en", "status": "staged"},
+        {"id": "cms_c8036446a079", "language": "hi", "status": "staged"},
+        {"id": "cms_b494a7074859", "language": "es", "status": "staged"},
+        {"id": "cms_9187035acc08", "language": "de", "status": "staged"},
+        {"id": "cms_420aa70c4366", "language": "fr", "status": "staged"}
+    ]
+}
+```
+
+Selected fields from the publish response (HTTP `200`):
+
+```json
+{
+    "state": "published",
+    "cms_documents": [
+        {"id": "cms_8d96870dc303", "language": "en", "status": "published"},
+        {"id": "cms_c8036446a079", "language": "hi", "status": "published"},
+        {"id": "cms_b494a7074859", "language": "es", "status": "published"},
+        {"id": "cms_9187035acc08", "language": "de", "status": "published"},
+        {"id": "cms_420aa70c4366", "language": "fr", "status": "published"}
+    ]
+}
+```
+
+`GET /api/v1/cms/cms_8d96870dc303/preview` returns:
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alder Grove Sparkling Citrus: No added sugar</title>
+```
+
+`python -m app.demo` exercises the clean and stress paths:
+
+```text
+Mode: mock
+Brand: Alder Grove (fictional)
+
+[clean] brf_a9dd2df94de3 state=pending_approval revisions=0
+        guardrails_passed=True
+[clean] approved state=staged translations=4
+        hi: similarity=1.000
+        es: similarity=1.000
+        de: similarity=1.000
+        fr: similarity=1.000
+[clean] published state=published cms_docs=5
+        preview: /api/v1/cms/cms_83cf839e023d/preview
+
+[stress] brf_7e240dc652ee state=pending_approval revisions=1 initial_passed=False final_passed=True
+[stress] approved state=staged
+        database: <repo>/data/demo.db
+```
+
+(The demo prints the absolute database path; it is shortened to `<repo>` here.) With `WEBHOOK_URL` unset, transition webhook records are retained with status `skipped`; no network call is made.
 
 Useful endpoints:
 
